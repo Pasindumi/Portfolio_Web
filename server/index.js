@@ -8,8 +8,12 @@ const fs = require("fs");
 require("dotenv").config();
 
 const app = express();
+
+// Improved CORS for production
+const allowedOrigin = process.env.CLIENT_URL ? process.env.CLIENT_URL.replace(/\/$/, "") : "http://localhost:3000";
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || "http://localhost:3000",
+  origin: allowedOrigin,
   methods: ["GET", "POST", "PATCH", "DELETE"],
   credentials: true
 }));

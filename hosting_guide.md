@@ -87,6 +87,12 @@ If you prefer Render:
 
 ## 6. Troubleshooting Common Issues
 
+### CORS Error (Access-Control-Allow-Origin)
+If you see a "CORS policy" error in the console when trying to send a message:
+1. **Remove Trailing Slash**: Go to Koyeb -> Environment Variables. Ensure `CLIENT_URL` does **NOT** have a `/` at the end (e.g., use `https://my-app.vercel.app` NOT `https://my-app.vercel.app/`).
+2. **Use Production URL**: Do not use the Vercel URL that has random letters (like `rbwwlk574`). Use your main Vercel project URL (e.g., `https://portfolio-name.vercel.app`).
+3. **Commit & Push**: After changing `server/index.js`, make sure to push it to GitHub so Koyeb redeploys with the fix.
+
 ### Vercel Build "Errors" (Warnings)
 If you see a lot of `npm warn deprecated` messages and the build fails, don't worry! These are just warnings. Vercel often stops the build if it sees any warnings or peer dependency conflicts (especially with React 19).
 **Fix:**
