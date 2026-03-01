@@ -1,0 +1,236 @@
+.projects-section {
+    padding: 80px 20px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projects-container {
+    width: 100%;
+    max-width: 1100px;
+    /* Aligned with Resume width */
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.section-title span {
+    color: #f4af54;
+    /* Gold accent */
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    /* Force exactly 3 equal columns */
+    gap: 25px;
+    /* Tighter gap matching skills grid */
+}
+
+.project-card {
+    background: rgba(20, 25, 35, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    border-color: rgba(30, 144, 255, 0.3);
+    /* Blue glow on hover */
+}
+
+.project-img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 120px;
+    /* Drastically reduced to match skills card height aesthetic */
+    background: linear-gradient(135deg, rgba(30, 144, 255, 0.1), rgba(244, 175, 84, 0.1));
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.project-card:hover .project-cover-img {
+    transform: scale(1.05);
+    /* Slight dynamic zoom on hover */
+}
+
+/* Fallback styling for when no real image is provided */
+.project-img-placeholder {
+    font-size: 2rem;
+    /* Even smaller icon */
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.featured-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: linear-gradient(90deg, #f4af54, #ff8c00);
+    color: #000;
+    padding: 4px 10px;
+    /* Smaller badge */
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    box-shadow: 0 4px 10px rgba(244, 175, 84, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 2;
+}
+
+.project-content {
+    padding: 15px;
+    /* Extremely tight padding to match simple cards */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-title {
+    font-size: 1.1rem;
+    /* Smaller title */
+    color: #fff;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+.project-period {
+    color: #f4af54;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.project-desc {
+    color: #a0a0a0;
+    font-size: 0.85rem;
+    /* Even smaller text */
+    line-height: 1.4;
+    margin: 0 0 15px 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Limit strictly to 3 lines to control height */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 20px;
+    /* Reduced margin */
+    margin-top: auto;
+    /* Pushes tech and actions to bottom */
+}
+
+.tech-pill {
+    background: rgba(30, 144, 255, 0.1);
+    color: #1e90ff;
+    padding: 4px 10px;
+    /* Tighter pills */
+    border-radius: 15px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(30, 144, 255, 0.2);
+    /* For alternating styles */
+}
+
+/* Make some pills use the gold accent */
+.tech-pill:nth-child(even) {
+    background: rgba(244, 175, 84, 0.1);
+    color: #f4af54;
+    border-color: rgba(244, 175, 84, 0.2);
+}
+
+.project-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    /* Tightly pack action buttons */
+}
+
+.btn-action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    /* Smaller button height */
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-demo {
+    background: linear-gradient(90deg, #1e90ff, #0073e6);
+    color: #fff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+}
+
+.btn-demo:hover {
+    background: linear-gradient(90deg, #0073e6, #005bb5);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 144, 255, 0.4);
+}
+
+.btn-code {
+    background: transparent;
+    color: #dcdcdc;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-code:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 per row on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        /* 1 per row on mobile */
+        gap: 30px;
+    }
+}
